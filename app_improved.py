@@ -1532,7 +1532,7 @@ def show_assessment(questions_data: Dict, t: Dict, lang: str, sector: str) -> No
     # Filter dimensions based on sector
     active_dims = [
         d for d in questions_data['dimensions'] 
-        if not (d['id'] == 'fmcg' and sector != 'FMCG')
+        if not (d['id'] == 'fmcg' and sector not in ['FMCG', 'Retail'])
     ]
     
     # Calculate progress
@@ -1625,7 +1625,7 @@ def show_assessment(questions_data: Dict, t: Dict, lang: str, sector: str) -> No
     if st.session_state.get('show_results', False):
         try:
             from src import assessment
-            results = assessment.run_assessment_v2(st.session_state.answers, lang=lang)
+            results = assessment.run_assessment_v2(st.session_state.answers, lang=lang, sector=sector)
             show_results(results, t, sector, lang)
         except Exception as e:
             st.error(f"Error calculating results: {e}")

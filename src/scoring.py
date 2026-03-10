@@ -17,8 +17,12 @@ def calculate_dimension_score(answers, dimension_data):
     for i in range(limit):
         q = questions[i]
         w = q.get('weight', 1.0)
+        
+        # Dynamic max score detection for proper normalization (supports 1-5, 0-100, etc.)
+        max_q_score = max([opt.get('score', 5) for opt in q.get('options', [])]) if q.get('options') else 5
+        
         weighted_sum += answers[i] * w
-        total_weight += w * 5 
+        total_weight += w * max_q_score 
         
     if total_weight == 0:
         return 0
@@ -55,6 +59,8 @@ def calculate_governance_score_specific(answers, dimension_data, sector="General
     multipliers = {
         "Finance": 1.15,      # Strict
         "Manufacturing": 1.1, # Safety checks
+        "FMCG": 1.0,
+        "Retail": 1.0,
         "General": 1.0
     }
     impact = multipliers.get(sector, 1.0)
