@@ -31,6 +31,16 @@
 - **Zero-Data Retention**: Elaborazione esclusivamente in-session (RAM). Nessun dato viene inviato a server esterni.
 - **Transparency**: Logica di scoring documentata e conforme ai framework OECD/NIST.
 
+### 📊 Guida all'Interpretazione dello Score
+Il punteggio finale riflette il posizionamento dell'organizzazione rispetto ai framework di maturità digitale (NIST/OECD) e ai requisiti dell'EU AI Act.
+
+| Punteggio | Livello di Maturità | Descrizione Strategica |
+| :--- | :--- | :--- |
+| **0 - 25%** | 🔴 **Ad-hoc** | Processi isolati, scarsa consapevolezza dei rischi e dei dati. L'approccio è reattivo. |
+| **26 - 50%** | 🟠 **Opportunistic** | Primi esperimenti avviati, ma manca una governance centrale e una strategia di scaling. |
+| **51 - 75%** | 🟡 **Systematic** | Strategia definita, dati strutturati e attenzione rigorosa alla compliance e all'etica. |
+| **76 - 100%** | 🟢 **Transformational** | AI integrata nel core business, processi ottimizzati e piena conformità al Regolamento UE 2024/1689. |
+
 ---
 
 ## 🔧 Installation & Setup
