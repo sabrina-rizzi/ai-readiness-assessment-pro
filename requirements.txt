@@ -2,5 +2,5 @@ streamlit
 pandas
 plotly
 openpyxl
-fpdf2
+fpdf
 Pillow
