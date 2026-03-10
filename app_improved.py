@@ -985,9 +985,6 @@ def main():
     if 'assessment_history' not in st.session_state:
         st.session_state.assessment_history = []
     
-    if 'last_loaded_example' not in st.session_state:
-        st.session_state.last_loaded_example = t['new']
-    
     # JS snippet to sync LocalStorage -> Session State on first load
     # This uses a "hidden" mechanism to communicate back to Streamlit
     import streamlit.components.v1 as components
@@ -1029,6 +1026,9 @@ def main():
     )
     lang = lang_code.lower()
     t = TRANS[lang]
+    
+    if 'last_loaded_example' not in st.session_state:
+        st.session_state.last_loaded_example = t['new']
     
     st.sidebar.markdown("<br>", unsafe_allow_html=True)
     
