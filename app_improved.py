@@ -321,8 +321,8 @@ st.markdown("""
     .sidebar-section-title {
         font-size: 1.05rem;
         font-weight: 700;
-        color: #e0e0e0;
-        margin: 4px 0 6px 0;
+        color: #31333F; /* High contrast for light mode */
+        margin: 8px 0 4px 0;
         letter-spacing: 0.3px;
         display: flex;
         align-items: center;
@@ -1001,7 +1001,7 @@ def main():
     
     # Sidebar
     st.sidebar.markdown(
-        f"<p class='sidebar-title-custom'>🤖 {TRANS['en']['title']}</p>", 
+        f"<p class='sidebar-title-custom'>🤖 {TRANS[lang]['title']}</p>", 
         unsafe_allow_html=True
     )
     
