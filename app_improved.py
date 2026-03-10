@@ -989,6 +989,9 @@ def main():
     # This uses a "hidden" mechanism to communicate back to Streamlit
     import streamlit.components.v1 as components
     
+    # Pre-initialize language to avoid UnboundLocalError for dynamic title before widget
+    lang = st.session_state.lang_toggle.lower() if 'lang_toggle' in st.session_state else 'it'
+    
     # We use a state variable to ensure we only sync once per session
     if 'ls_synced' not in st.session_state:
         st.session_state.ls_synced = False
