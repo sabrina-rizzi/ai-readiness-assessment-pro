@@ -14,32 +14,32 @@
 
 ## ✨ Key Features / Funzionalità Chiave
 
-### 🏛️ 6 Pillars of Maturity
-1. **Strategy & Governance**: Allineamento strategico e visione.
-2. **Data Ecosystem**: Qualità e governance dei dati.
-3. **Processes & Operations**: Integrazione nei workflow.
-4. **Talent & Culture**: Competenze e gestione del cambiamento.
-5. **Infrastructure**: Scalabilità e risorse tecnologiche.
-6. **Ethics & Compliance**: Mitigazione dei bias e allineamento all'EU AI Act.
+### 🏛️ 6 Pillars of Maturity / 6 Pilastri della Maturità
+1. **Strategy & Governance**: AI alignment with goals / Allineamento strategico e visione.
+2. **Data Ecosystem**: Quality and availability / Qualità e governance dei dati.
+3. **Processes & Operations**: Workflow integration / Integrazione nei workflow.
+4. **Talent & Culture**: Skills and change management / Competenze e gestione del cambiamento.
+5. **Infrastructure**: Scalability and resources / Scalabilità e risorse tecnologiche.
+6. **Ethics & Compliance**: Bias mitigation and AI Act / Mitigazione dei bias e allineamento all'EU AI Act.
 
-### 📊 Advanced Analytics
-- **Dynamic Radar Charts**: Visualizzazione in tempo reale rispetto ai benchmark di settore (Finance, PMI, Retail).
-- **What-If Simulator**: Modellazione interattiva per prevedere l'impatto degli investimenti strategici.
-- **Professional Export**: Generazione di report completi in PDF (Executive Summary) ed Excel.
+### 📊 Advanced Analytics / Analisi Avanzate
+- **Dynamic Radar Charts**: Real-time visualization vs industry benchmarks (Finance, SME, Retail) / Visualizzazione in tempo reale rispetto ai benchmark di settore.
+- **What-If Simulator**: Interactive modeling to predict investment impact / Modellazione interattiva per prevedere l'impatto degli investimenti.
+- **Professional Export**: PDF Executive Summary and Excel reports / Generazione di report completi in PDF ed Excel.
 
-### 🔐 Security & Privacy
-- **Zero-Data Retention**: Elaborazione esclusivamente in-session (RAM). Nessun dato viene inviato a server esterni.
-- **Transparency**: Logica di scoring documentata e conforme ai framework OECD/NIST.
+### 🔐 Security & Privacy / Sicurezza e Privacy
+- **Zero-Data Retention**: Purely in-session processing (RAM). No data sent to external servers / Elaborazione esclusivamente in-session. Nessun dato inviato esternamente.
+- **Transparency**: Documented scoring logic based on OECD/NIST / Logica di scoring documentata e conforme a framework OECD/NIST.
 
-### 📊 Guida all'Interpretazione dello Score
-Il punteggio finale riflette il posizionamento dell'organizzazione rispetto ai framework di maturità digitale (NIST/OECD) e ai requisiti dell'EU AI Act.
+### 📊 Score Interpretation Guide / Guida all'Interpretazione dello Score
+The final score reflects the organization's alignment with digital maturity frameworks and EU AI Act requirements. / Il punteggio riflette il posizionamento rispetto ai framework di maturità e ai requisiti dell'AI Act.
 
-| Punteggio | Livello di Maturità | Descrizione Strategica |
+| Score | Maturity Level / Livello | Strategic Description / Descrizione |
 | :--- | :--- | :--- |
-| **0 - 25%** | 🔴 **Ad-hoc** | Processi isolati, scarsa consapevolezza dei rischi e dei dati. L'approccio è reattivo. |
-| **26 - 50%** | 🟠 **Opportunistic** | Primi esperimenti avviati, ma manca una governance centrale e una strategia di scaling. |
-| **51 - 75%** | 🟡 **Systematic** | Strategia definita, dati strutturati e attenzione rigorosa alla compliance e all'etica. |
-| **76 - 100%** | 🟢 **Transformational** | AI integrata nel core business, processi ottimizzati e piena conformità al Regolamento UE 2024/1689. |
+| **0 - 25%** | 🔴 **Ad-hoc** | Isolated processes, low risk awareness. Reactive approach. / Processi isolati, approccio reattivo. |
+| **26 - 50%** | 🟠 **Opportunistic** | Early experiments, lack of central governance. / Primi esperimenti, manca una governance centrale. |
+| **51 - 75%** | 🟡 **Systematic** | Defined strategy, structured data, rigorous ethics. / Strategia definita, dati strutturati e attenzione all'etica. |
+| **76 - 100%** | 🟢 **Transformational** | AI integrated in core business, EU AI Act compliant. / AI integrata nel core business, piena conformità UE. |
 
 ---
 
