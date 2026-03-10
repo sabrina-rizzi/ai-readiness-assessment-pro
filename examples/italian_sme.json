@@ -1,0 +1,23 @@
+{
+    "company_name": "Manifattura Italiana S.p.A.",
+    "sector": "Manufacturing",
+    "source": "Trend Osservatorio AI Politecnico di Milano 2024",
+    "answers": {
+        "data": [
+            3,
+            3
+        ],
+        "process": [
+            3
+        ],
+        "team": [
+            3
+        ],
+        "infrastructure": [
+            3
+        ],
+        "strategy": [
+            3
+        ]
+    }
+}

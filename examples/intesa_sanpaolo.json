@@ -1,0 +1,23 @@
+{
+    "company_name": "Intesa Sanpaolo",
+    "sector": "Banking & Finance",
+    "source": "Report 2024 / Intesa Sanpaolo AIxeleration",
+    "answers": {
+        "data": [
+            5,
+            5
+        ],
+        "process": [
+            5
+        ],
+        "team": [
+            5
+        ],
+        "infrastructure": [
+            5
+        ],
+        "strategy": [
+            5
+        ]
+    }
+}

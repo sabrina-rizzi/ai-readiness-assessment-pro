@@ -1,0 +1,373 @@
+{
+  "dimensions": [
+    {
+      "id": "strategy",
+      "name": "Pianificazione Strategica",
+      "name_en": "Strategic Alignment",
+      "weight": 0.20,
+      "description": "L'IA deve servire a uno scopo di business. Qui valutiamo se l'azienda ha identificato un problema reale da risolvere con l'IA o se sta solo seguendo un trend.",
+      "description_en": "AI must serve a business purpose. Evaluates if the company has identified a real problem to resolve with AI or is just following a trend.",
+      "questions": [
+        {
+          "id": "s1",
+          "weight": 1.5,
+          "text": "L'azienda ha obiettivi di business chiari legati all'impiego dell'IA?",
+          "text_en": "Does the company have clear business objectives related to AI use?",
+          "options": [
+            {
+              "text": "Nessun obiettivo chiaro",
+              "text_en": "No clear objective",
+              "score": 1
+            },
+            {
+              "text": "Obiettivi generali ('ridurre costi')",
+              "text_en": "General objectives",
+              "score": 3
+            },
+            {
+              "text": "KPI specifici e misurabili",
+              "text_en": "Specific, measurable KPIs",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "weight": 1.0,
+          "text": "Esiste un budget dedicato per l'innovazione AI?",
+          "text_en": "Is there a dedicated budget for AI innovation?",
+          "options": [
+            {
+              "text": "Nessun budget",
+              "text_en": "No budget",
+              "score": 1
+            },
+            {
+              "text": "Budget condiviso con IT",
+              "text_en": "Shared IT budget",
+              "score": 3
+            },
+            {
+              "text": "Budget R&D dedicato",
+              "text_en": "Dedicated R&D budget",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Maturità dei Dati",
+      "name_en": "Data Readiness",
+      "weight": 0.25,
+      "description": "Valuta la 'materia prima'. Senza dati di qualità, in volume sufficiente e accessibili, è impossibile addestrare modelli efficaci.",
+      "description_en": "Evaluates the 'raw material'. Without quality data, in sufficient volume and accessible, it is impossible to train effective models.",
+      "questions": [
+        {
+          "id": "d1",
+          "weight": 1.5,
+          "text": "Quanti dati strutturati sono disponibili?",
+          "text_en": "How much structured data is available?",
+          "options": [
+            {
+              "text": "< 1000 record",
+              "text_en": "< 1000 records",
+              "score": 1
+            },
+            {
+              "text": "1000 - 10.000 record",
+              "text_en": "1000 - 10,000 records",
+              "score": 3
+            },
+            {
+              "text": "> 10.000 record",
+              "text_en": "> 10,000 records",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "id": "d2",
+          "weight": 1.2,
+          "text": "Qual è il livello di qualità dei dati?",
+          "text_en": "What is the level of data quality?",
+          "options": [
+            {
+              "text": "Frammentati/Sporchi",
+              "text_en": "Fragmented/Dirty",
+              "score": 1
+            },
+            {
+              "text": "Parzialmente puliti",
+              "text_en": "Partially clean",
+              "score": 3
+            },
+            {
+              "text": "Alta qualità verified",
+              "text_en": "High quality verified",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "name": "Maturità dei Processi",
+      "name_en": "Process Maturity",
+      "weight": 0.15,
+      "description": "L'IA eccelle nell'ottimizzare processi già esistenti e ben definiti. Se un processo è caotico, l'IA replicherà l'inefficienza.",
+      "description_en": "AI excels at optimizing existing processes. If a process is chaotic, AI will replicate inefficiency.",
+      "questions": [
+        {
+          "id": "p1",
+          "weight": 1.0,
+          "text": "Il processo è documentato?",
+          "text_en": "Is the process documented?",
+          "options": [
+            {
+              "text": "Ad-hoc / Non documentato",
+              "text_en": "Ad-hoc / Undocumented",
+              "score": 1
+            },
+            {
+              "text": "Documentato ma manuale",
+              "text_en": "Documented but manual",
+              "score": 3
+            },
+            {
+              "text": "Standardizzato e monitorato",
+              "text_en": "Standardized and monitored",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "name": "Team & Cultura",
+      "name_en": "Team & Culture",
+      "weight": 0.15,
+      "description": "Le competenze per implementare l'IA e la mentalità aperta all'innovazione.",
+      "description_en": "Skills to implement AI and an open mindset towards innovation.",
+      "questions": [
+        {
+          "id": "t1",
+          "weight": 1.2,
+          "text": "Competenza tecnica interna sull'IA?",
+          "text_en": "Internal technical AI competence?",
+          "options": [
+            {
+              "text": "Nessuna (Outsource)",
+              "text_en": "None (Outsource)",
+              "score": 1
+            },
+            {
+              "text": "Base (Teorica)",
+              "text_en": "Basic (Theoretical)",
+              "score": 3
+            },
+            {
+              "text": "Avanzata (Data Scientists)",
+              "text_en": "Advanced (Data Scientists)",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastruttura IT",
+      "name_en": "IT Infrastructure",
+      "weight": 0.10,
+      "description": "Infrastruttura IT moderna (Cloud, API) vs Legacy.",
+      "description_en": "Modern IT infrastructure (Cloud, API) vs Legacy.",
+      "questions": [
+        {
+          "id": "i1",
+          "weight": 1.0,
+          "text": "Infrastruttura Cloud/On-premise?",
+          "text_en": "Cloud/On-premise Infrastructure?",
+          "options": [
+            {
+              "text": "Legacy / On-premise isolato",
+              "text_en": "Legacy / Isolated On-premise",
+              "score": 1
+            },
+            {
+              "text": "Ibrido",
+              "text_en": "Hybrid",
+              "score": 3
+            },
+            {
+              "text": "Cloud Native / Scalabile",
+              "text_en": "Cloud Native / Scalable",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "Governance & Etica",
+      "name_en": "Governance & Ethics",
+      "weight": 0.15,
+      "description": "Valutazione della conformità normativa (EU AI Act) e dei processi di gestione del rischio.",
+      "description_en": "Assessment of regulatory compliance (EU AI Act) and risk management processes.",
+      "questions": [
+        {
+          "id": "risk_assessment",
+          "weight": 1.5,
+          "text": "Avete implementato una procedura per classificare i sistemi IA in base ai livelli di rischio dell'EU AI Act?",
+          "text_en": "Have you implemented a procedure to classify AI systems according to EU AI Act risk levels?",
+          "options": [
+            {
+              "text": "No, non abbiamo una classificazione formale",
+              "text_en": "No, we don't have a formal classification",
+              "score": 0
+            },
+            {
+              "text": "Mappatura preliminare in corso",
+              "text_en": "Preliminary mapping in progress",
+              "score": 50
+            },
+            {
+              "text": "Sì, tutti i sistemi sono mappati (Rischio Alto, Limitato, Minimo)",
+              "text_en": "Yes, all systems are mapped (High, Limited, Minimal Risk)",
+              "score": 100
+            }
+          ]
+        },
+        {
+          "id": "human_in_the_loop",
+          "weight": 1.5,
+          "text": "Per i sistemi ad alto rischio/decisionali, è previsto un presidio umano (Human-in-the-loop)?",
+          "text_en": "For high-risk/decision-making systems, is there human oversight (Human-in-the-loop)?",
+          "options": [
+            {
+              "text": "No, le decisioni sono completamente automatizzate",
+              "text_en": "No, decisions are fully automated",
+              "score": 0
+            },
+            {
+              "text": "Sì, ma solo con revisione a posteriori (non bloccante)",
+              "text_en": "Yes, but only with ex-post review (not blocking)",
+              "score": 50
+            },
+            {
+              "text": "Sì, un operatore esperto deve validare ogni output critico",
+              "text_en": "Yes, an expert operator must validate every critical output",
+              "score": 100
+            }
+          ]
+        },
+        {
+          "id": "transparency",
+          "weight": 1.0,
+          "text": "Esiste una policy per la trasparenza (es. avvisare l'utente che sta interagendo con un'AI)?",
+          "text_en": "Is there a transparency policy (e.g., notifying the user they are interacting with an AI)?",
+          "options": [
+            {
+              "text": "Nessuna informativa prevista",
+              "text_en": "No disclosure planned",
+              "score": 0
+            },
+            {
+              "text": "Informativa generica nei termini di servizio",
+              "text_en": "General disclosure in terms of service",
+              "score": 40
+            },
+            {
+              "text": "Sì, avvisi chiari e contestuali per ogni interazione IA",
+              "text_en": "Yes, clear and contextual warnings for every AI interaction",
+              "score": 100
+            }
+          ]
+        },
+        {
+          "id": "data_bias",
+          "weight": 1.0,
+          "text": "Vengono effettuati audit periodici per identificare bias o pregiudizi nei dati di addestramento?",
+          "text_en": "Are periodic audits conducted to identify biases in training data?",
+          "options": [
+            {
+              "text": "Mai effettuati",
+              "text_en": "Never conducted",
+              "score": 0
+            },
+            {
+              "text": "Effettuati una tantum",
+              "text_en": "Conducted as a one-off",
+              "score": 50
+            },
+            {
+              "text": "Sì, audit sistematici e monitoraggio continuo",
+              "text_en": "Yes, systematic audits and continuous monitoring",
+              "score": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fmcg",
+      "name": "Specifiche FMCG (Retail)",
+      "name_en": "FMCG Specifics (Retail)",
+      "weight": 0.0,
+      "description": "Modulo verticale per il settore Fast Moving Consumer Goods.",
+      "description_en": "Vertical module for Fast Moving Consumer Goods.",
+      "questions": [
+        {
+          "id": "f1",
+          "weight": 1.0,
+          "text": "Utilizzo IA nella Supply Chain?",
+          "text_en": "AI usage in Supply Chain?",
+          "options": [
+            {
+              "text": "Solo manuale / Excel",
+              "text_en": "Manual / Excel only",
+              "score": 1
+            },
+            {
+              "text": "Analisi predittiva base",
+              "text_en": "Basic predictive analysis",
+              "score": 3
+            },
+            {
+              "text": "Ottimizzazione automatica scorte",
+              "text_en": "Automated stock optimization",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "id": "f2",
+          "weight": 1.0,
+          "text": "Analisi del Sentiment sui nuovi prodotti?",
+          "text_en": "Sentiment Analysis on new products?",
+          "options": [
+            {
+              "text": "Nessuna analisi social",
+              "text_en": "No social analysis",
+              "score": 1
+            },
+            {
+              "text": "Report periodici manuali",
+              "text_en": "Periodic manual reports",
+              "score": 3
+            },
+            {
+              "text": "Real-time NLP Sentiment",
+              "text_en": "Real-time NLP Sentiment",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

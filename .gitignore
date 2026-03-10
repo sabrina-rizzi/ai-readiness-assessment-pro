@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.streamlit/config.toml
+*.log
+data/data_uid.json
+.DS_Store
+.env
+.agents/
+.gemini/
+brain/
+update_version.py

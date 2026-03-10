@@ -1,0 +1,58 @@
+{
+    "sections": [
+        {
+            "title": "1. Data Governance e Management",
+            "title_en": "1. Data Governance & Management",
+            "questions": [
+                {
+                    "text": "Esiste un responsabile (Data Owner) per ogni set di dati aziendali?",
+                    "text_en": "Is there a designated Data Owner for each corporate dataset?"
+                },
+                {
+                    "text": "Esiste un dizionario dei dati (Data Dictionary) o una lista dei metadata?",
+                    "text_en": "Is there a Data Dictionary or a metadata list?"
+                },
+                {
+                    "text": "Ci sono policy chiare per l'accesso e la sicurezza dei dati (GDPR compreso)?",
+                    "text_en": "Are there clear policies for data access and security (including GDPR)?"
+                }
+            ]
+        },
+        {
+            "title": "2. Qualità del Dato",
+            "title_en": "2. Data Quality",
+            "questions": [
+                {
+                    "text": "I dati sono monitorati regolarmente per identificare errori o duplicati?",
+                    "text_en": "Are data monitored regularly to identify errors or duplicates?"
+                },
+                {
+                    "text": "Esiste un processo automatizzato di pulizia (Data Cleansing)?",
+                    "text_en": "Is there an automated Data Cleansing process?"
+                },
+                {
+                    "text": "La frequenza di aggiornamento dei dati è compatibile con le esigenze di business?",
+                    "text_en": "Is the data update frequency compatible with business needs?"
+                }
+            ]
+        },
+        {
+            "title": "3. Architettura e Integrazione",
+            "title_en": "3. Architecture & Integration",
+            "questions": [
+                {
+                    "text": "I dati sono centralizzati o vivono in silos isolati?",
+                    "text_en": "Are data centralized or do they reside in isolated silos?"
+                },
+                {
+                    "text": "I sistemi aziendali comunicano tra loro via API o database condivisi?",
+                    "text_en": "Do corporate systems communicate via APIs or shared databases?"
+                },
+                {
+                    "text": "L'infrastruttura è in grado di scalare se il volume dei dati raddoppia?",
+                    "text_en": "Can the infrastructure scale if data volume doubles?"
+                }
+            ]
+        }
+    ]
+}

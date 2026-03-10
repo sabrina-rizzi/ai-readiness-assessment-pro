@@ -1,0 +1,42 @@
+{
+    "General": {
+        "strategy": 50,
+        "data": 45,
+        "process": 50,
+        "team": 40,
+        "infrastructure": 55,
+        "ethics": 30
+    },
+    "Manufacturing": {
+        "strategy": 40,
+        "data": 60,
+        "process": 70,
+        "team": 35,
+        "infrastructure": 50,
+        "ethics": 25
+    },
+    "Finance": {
+        "strategy": 70,
+        "data": 80,
+        "process": 80,
+        "team": 65,
+        "infrastructure": 75,
+        "ethics": 80
+    },
+    "FMCG": {
+        "strategy": 65,
+        "data": 55,
+        "process": 60,
+        "team": 45,
+        "infrastructure": 50,
+        "ethics": 40
+    },
+    "Retail": {
+        "strategy": 60,
+        "data": 70,
+        "process": 55,
+        "team": 30,
+        "infrastructure": 60,
+        "ethics": 35
+    }
+}
