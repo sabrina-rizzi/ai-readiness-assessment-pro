@@ -1,0 +1,33 @@
+{
+    "company_name": "Bauli S.p.A.",
+    "sector": "Retail",
+    "source": "Esempio Retail / FMCG",
+    "answers": {
+        "strategy": [
+            4
+        ],
+        "data": [
+            5,
+            4
+        ],
+        "process": [
+            4
+        ],
+        "team": [
+            3
+        ],
+        "infrastructure": [
+            4
+        ],
+        "governance": [
+            70,
+            80,
+            60,
+            50
+        ],
+        "fmcg": [
+            5,
+            4
+        ]
+    }
+}

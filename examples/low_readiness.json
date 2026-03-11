@@ -1,6 +1,6 @@
 {
     "company_name": "Tradizione Casa S.r.l.",
-    "sector": "Artigianato / Arredamento",
+    "sector": "General",
     "source": "Scenario ipotetico di bassa digitalizzazione",
     "answers": {
         "data": [
@@ -17,6 +17,16 @@
             1
         ],
         "strategy": [
+            1
+        ],
+        "governance": [
+            10,
+            20,
+            0,
+            10
+        ],
+        "fmcg": [
+            1,
             1
         ]
     }

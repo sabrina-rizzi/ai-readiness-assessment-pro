@@ -933,13 +933,13 @@ def create_gauge_chart(score: float, label: str, color_hex: str = "#667eea") -> 
 def load_example_data_and_redirect(example_name: str, menu_options: Dict, t: Dict) -> None:
     """Load example data from JSON file and redirect to assessment."""
     file_map = {
-        t.get('case_1', 'Caso Studio Alto'): "examples/intesa_sanpaolo.json",
-        t.get('case_2', 'Caso Studio Medio'): "examples/italian_sme.json",
-        t.get('case_3', 'Caso Studio Basso'): "examples/low_readiness.json",
-        # Legacy keys for backwards compat
+        t.get('case_1', '🏦 Settore Finance (Alto)'): "examples/intesa_sanpaolo.json",
+        t.get('case_2', '🏭 Settore Manifatturiero (Medio)'): "examples/italian_sme.json",
+        t.get('case_3', '🏪 Settore Retail (Basso)'): "examples/low_readiness.json",
+        "Bauli / FMCG (Retail)": "examples/bauli_retail.json",
+        # Legacy/Internal keys
         "Intesa Sanpaolo (High)": "examples/intesa_sanpaolo.json",
         "Italian SME (Medium)": "examples/italian_sme.json",
-        "Tradizione Casa (Low)": "examples/low_readiness.json",
     }
     
     file_path = file_map.get(example_name)
@@ -952,6 +952,11 @@ def load_example_data_and_redirect(example_name: str, menu_options: Dict, t: Dic
             with open(file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 st.session_state.answers = data.get('answers', {})
+                
+                # Sync sector from JSON if available
+                if 'sector' in data:
+                    st.session_state.sector_select = data['sector']
+                
                 st.session_state.data_uid = st.session_state.get('data_uid', 0) + 1
                 st.session_state.last_loaded_example = example_name
                 st.session_state.menu = "Assessment"
@@ -1513,13 +1518,18 @@ def show_home(t: Dict, lang: str, menu_options: Dict) -> None:
     cc1, cc2, cc3 = st.columns(3)
     with cc1:
         if st.button(t['case_1'], width="stretch"):
-            load_example_data_and_redirect("Intesa Sanpaolo (High)", menu_options, t)
+            load_example_data_and_redirect(t['case_1'], menu_options, t)
     with cc2:
         if st.button(t['case_2'], width="stretch"):
-            load_example_data_and_redirect("Bauli / FMCG (Retail)", menu_options, t)
+            load_example_data_and_redirect(t['case_2'], menu_options, t)
     with cc3:
         if st.button(t['case_3'], width="stretch"):
-            load_example_data_and_redirect("Italian SME (Medium)", menu_options, t)
+            load_example_data_and_redirect(t['case_3'], menu_options, t)
+    
+    # Extra button for Bauli
+    st.markdown("<br>", unsafe_allow_html=True)
+    if st.button("🥐 " + ("Esempio" if lang == 'it' else "Example") + ": Bauli / FMCG (Retail)", width="stretch"):
+        load_example_data_and_redirect("Bauli / FMCG (Retail)", menu_options, t)
 
 def show_assessment(questions_data: Dict, t: Dict, lang: str, sector: str) -> None:
     """Display assessment page with questions."""
