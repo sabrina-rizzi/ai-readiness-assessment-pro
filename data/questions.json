@@ -175,6 +175,29 @@
               "score": 5
             }
           ]
+        },
+        {
+          "id": "t2",
+          "weight": 1.2,
+          "text": "Strategia di comunicazione e Change Management?",
+          "text_en": "Communication Strategy & Change Management?",
+          "options": [
+            {
+              "text": "Nessuna comunicazione (resistenza/timore di sostituzione)",
+              "text_en": "No communication (resistance/fear of replacement)",
+              "score": 1
+            },
+            {
+              "text": "Comunicazione parziale o solo tecnica/top-down",
+              "text_en": "Partial or only technical/top-down communication",
+              "score": 3
+            },
+            {
+              "text": "Piano di change management e obiettivi condivisi",
+              "text_en": "Change management plan and shared objectives",
+              "score": 5
+            }
+          ]
         }
       ]
     },

@@ -1,27 +1,28 @@
 {
-    "company_name": "Intesa Sanpaolo",
-    "sector": "Banking & Finance",
-    "source": "Report 2024 / Intesa Sanpaolo AIxeleration",
+    "company_name": "Intesa Sanpaolo (Refined High)",
+    "sector": "Finance",
+    "source": "Esempio High Readiness (Adattato)",
     "answers": {
+        "strategy": [
+            4
+        ],
         "data": [
             5,
-            5
+            4
         ],
         "process": [
             5
         ],
         "team": [
-            5
+            4,
+            3
         ],
         "infrastructure": [
             5
         ],
-        "strategy": [
-            5
-        ],
         "governance": [
             100,
-            100,
+            50,
             100,
             100
         ],

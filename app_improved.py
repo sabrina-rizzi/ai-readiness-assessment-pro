@@ -638,15 +638,15 @@ def load_benchmarks() -> Dict:
         st.warning("⚠️ Benchmark file not found. Using defaults.")
         return {
             "General": {"strategy": 50, "data": 50, "process": 50, 
-                       "team": 50, "infrastructure": 50, "governance": 50},
+                       "team": 50, "infrastructure": 50, "governance": 50, "fmcg": 40},
             "Manufacturing": {"strategy": 55, "data": 60, "process": 65, 
-                             "team": 50, "infrastructure": 55, "governance": 50},
+                             "team": 50, "infrastructure": 55, "governance": 50, "fmcg": 30},
             "Finance": {"strategy": 70, "data": 75, "process": 65, 
-                       "team": 60, "infrastructure": 70, "governance": 80},
+                       "team": 60, "infrastructure": 70, "governance": 80, "fmcg": 25},
             "FMCG": {"strategy": 60, "data": 65, "process": 60, 
-                    "team": 55, "infrastructure": 60, "governance": 65},
+                    "team": 55, "infrastructure": 60, "governance": 65, "fmcg": 75},
             "Retail": {"strategy": 55, "data": 60, "process": 60, 
-                      "team": 50, "infrastructure": 55, "governance": 60}
+                      "team": 50, "infrastructure": 55, "governance": 60, "fmcg": 70}
         }
     except Exception as e:
         st.error(f"Error loading benchmarks: {e}")
