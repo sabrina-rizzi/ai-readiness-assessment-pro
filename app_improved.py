@@ -936,43 +936,22 @@ def load_example_data_and_redirect(example_name: str, menu_options: Dict, t: Dic
         t.get('case_1', '🏦 Settore Finance (Alto)'): "examples/intesa_sanpaolo.json",
         t.get('case_2', '🏭 Settore Manifatturiero (Medio)'): "examples/italian_sme.json",
         t.get('case_3', '🏪 Settore Retail (Basso)'): "examples/low_readiness.json",
-        "Bauli / FMCG (Retail)": "examples/bauli_retail.json",
         # Legacy/Internal keys
         "Intesa Sanpaolo (High)": "examples/intesa_sanpaolo.json",
         "Italian SME (Medium)": "examples/italian_sme.json",
     }
     
     file_path = file_map.get(example_name)
-    
     if not file_path:
         file_path = "examples/italian_sme.json"
     
-    if file_path and os.path.exists(file_path):
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                st.session_state.answers = data.get('answers', {})
-                
-                # Sync sector from JSON if available
-                if 'sector' in data:
-                    st.session_state.sector_select = data['sector']
-                
-                st.session_state.data_uid = st.session_state.get('data_uid', 0) + 1
-                st.session_state.last_loaded_example = example_name
-                st.session_state.menu = "Assessment"
-                st.session_state.show_results = True
-                
-                try:
-                    assess_label = next(k for k, v in menu_options.items() if v == "Assessment")
-                    st.session_state.nav_radio = assess_label
-                except:
-                    pass
-                
-                st.rerun()
-        except Exception as e:
-            st.error(f"Errore nel caricamento del caso studio: {e}")
+    if os.path.exists(file_path):
+        # Set pending load instead of direct modification to avoid StateError
+        st.session_state._pending_load_file = file_path
+        st.session_state._pending_load_name = example_name
+        st.rerun()
     else:
-        st.warning(f"File cas studio non trovato: {file_path}")
+        st.warning(f"File caso studio non trovato: {file_path}")
 
 # ============================================================================
 # MAIN APPLICATION
@@ -989,6 +968,27 @@ def main():
         st.session_state.show_results = False
     if 'assessment_history' not in st.session_state:
         st.session_state.assessment_history = []
+
+    # --- PENDING LOAD CHECKER (Fixes StreamlitStateError) ---
+    if '_pending_load_file' in st.session_state:
+        file_path = st.session_state._pending_load_file
+        example_name = st.session_state._pending_load_name
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                st.session_state.answers = data.get('answers', {})
+                if 'sector' in data:
+                    st.session_state.sector_select = data['sector']
+                st.session_state.data_uid = st.session_state.get('data_uid', 0) + 1
+                st.session_state.last_loaded_example = example_name
+                st.session_state.menu = "Assessment"
+                st.session_state.show_results = True
+        except Exception as e:
+            st.error(f"Error loading: {e}")
+        finally:
+            if '_pending_load_file' in st.session_state: del st.session_state._pending_load_file
+            if '_pending_load_name' in st.session_state: del st.session_state._pending_load_name
+    # --------------------------------------------------------
     
     # JS snippet to sync LocalStorage -> Session State on first load
     # This uses a "hidden" mechanism to communicate back to Streamlit
@@ -1197,12 +1197,12 @@ def main():
             st.warning(t.get('confirm_reset', 'Conferma reset'))
             if st.button("Conferma" if lang == 'it' else "Confirm", type="primary", key="confirm_reset_check", width="stretch"):
                 saved_lang = st.session_state.get('lang_toggle', 'IT')
-                for key in list(st.session_state.keys()):
-                    del st.session_state[key]
+                st.session_state.clear() # Full clear is safer
                 st.session_state['lang_toggle'] = saved_lang
                 
                 # Setup correct starting state (Home)
                 st.session_state.menu = "Home"
+                st.session_state.show_results = False
                 st.session_state.last_loaded_example = t['new']
                 st.session_state._scroll_to_top = True
                 
@@ -1475,6 +1475,7 @@ def show_home(t: Dict, lang: str, menu_options: Dict) -> None:
         
         def go_assess():
             st.session_state.menu = "Assessment"
+            st.session_state.show_results = False # Ensure clean start
             try:
                 assess_label = next(k for k, v in menu_options.items() if v == "Assessment")
                 st.session_state.nav_radio = assess_label
@@ -1483,6 +1484,7 @@ def show_home(t: Dict, lang: str, menu_options: Dict) -> None:
         
         def go_audit():
             st.session_state.menu = "Data Audit"
+            st.session_state.show_results = False # Ensure clean start
             try:
                 audit_label = next(k for k, v in menu_options.items() if v == "Data Audit")
                 st.session_state.nav_radio = audit_label
@@ -1525,11 +1527,6 @@ def show_home(t: Dict, lang: str, menu_options: Dict) -> None:
     with cc3:
         if st.button(t['case_3'], width="stretch"):
             load_example_data_and_redirect(t['case_3'], menu_options, t)
-    
-    # Extra button for Bauli
-    st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("🥐 " + ("Esempio" if lang == 'it' else "Example") + ": Bauli / FMCG (Retail)", width="stretch"):
-        load_example_data_and_redirect("Bauli / FMCG (Retail)", menu_options, t)
 
 def show_assessment(questions_data: Dict, t: Dict, lang: str, sector: str) -> None:
     """Display assessment page with questions."""

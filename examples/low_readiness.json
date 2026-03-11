@@ -1,32 +1,32 @@
 {
-    "company_name": "Tradizione Casa S.r.l.",
-    "sector": "General",
-    "source": "Scenario ipotetico di bassa digitalizzazione",
+    "company_name": "GDO / Retail (Esempio)",
+    "sector": "Retail",
+    "source": "Scenario ipotetico settore Retail",
     "answers": {
+        "strategy": [
+            2
+        ],
         "data": [
-            1,
+            2,
             1
         ],
         "process": [
-            1
+            2
         ],
         "team": [
             1
         ],
         "infrastructure": [
-            1
-        ],
-        "strategy": [
-            1
+            2
         ],
         "governance": [
-            10,
             20,
-            0,
-            10
+            30,
+            10,
+            20
         ],
         "fmcg": [
-            1,
+            2,
             1
         ]
     }
