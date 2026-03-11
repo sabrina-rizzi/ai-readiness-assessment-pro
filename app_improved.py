@@ -637,16 +637,16 @@ def load_benchmarks() -> Dict:
     except FileNotFoundError:
         st.warning("⚠️ Benchmark file not found. Using defaults.")
         return {
-            "General": {"strategy": 50, "data": 50, "processes": 50, 
-                       "team": 50, "infrastructure": 50, "ethics": 50},
-            "Manufacturing": {"strategy": 55, "data": 60, "processes": 65, 
-                             "team": 50, "infrastructure": 55, "ethics": 50},
-            "Finance": {"strategy": 70, "data": 75, "processes": 65, 
-                       "team": 60, "infrastructure": 70, "ethics": 80},
-            "FMCG": {"strategy": 60, "data": 65, "processes": 60, 
-                    "team": 55, "infrastructure": 60, "ethics": 65},
-            "Retail": {"strategy": 55, "data": 60, "processes": 60, 
-                      "team": 50, "infrastructure": 55, "ethics": 60}
+            "General": {"strategy": 50, "data": 50, "process": 50, 
+                       "team": 50, "infrastructure": 50, "governance": 50},
+            "Manufacturing": {"strategy": 55, "data": 60, "process": 65, 
+                             "team": 50, "infrastructure": 55, "governance": 50},
+            "Finance": {"strategy": 70, "data": 75, "process": 65, 
+                       "team": 60, "infrastructure": 70, "governance": 80},
+            "FMCG": {"strategy": 60, "data": 65, "process": 60, 
+                    "team": 55, "infrastructure": 60, "governance": 65},
+            "Retail": {"strategy": 55, "data": 60, "process": 60, 
+                      "team": 50, "infrastructure": 55, "governance": 60}
         }
     except Exception as e:
         st.error(f"Error loading benchmarks: {e}")
