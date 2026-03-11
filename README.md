@@ -2,7 +2,6 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-readiness-pro.streamlit.app/)
 [![EU AI Act Compliant](https://img.shields.io/badge/EU%20AI%20Act-Aligned-blue)](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🇮🇹 Panoramica
 **AI Readiness Assessment Pro** è uno strumento analitico di livello professionale progettato per valutare la maturità digitale delle organizzazioni nell'adozione dell'Intelligenza Artificiale. Sviluppato con un approccio **Ethics-by-Design**, il tool integra i requisiti del **Regolamento UE 2024/1689 (AI Act)**.
