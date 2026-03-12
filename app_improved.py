@@ -805,6 +805,17 @@ def save_to_localstorage():
     """
     components.html(js_code, height=0)
 
+def clear_localstorage():
+    """Clear assessment data from browser LocalStorage using JS."""
+    import streamlit.components.v1 as components
+    js_code = """
+    <script>
+        localStorage.removeItem('ai_readiness_history');
+        localStorage.removeItem('ai_readiness_answers');
+    </script>
+    """
+    components.html(js_code, height=0)
+
 def load_from_localstorage():
     """Load data from LocalStorage using a JS-to-Python bridge."""
     import streamlit.components.v1 as components
@@ -1196,14 +1207,19 @@ def main():
         with st.sidebar.expander(f"⚠️ {t.get('reset_btn', 'Reset')}", expanded=True):
             st.warning(t.get('confirm_reset', 'Conferma reset'))
             if st.button("Conferma" if lang == 'it' else "Confirm", type="primary", key="confirm_reset_check", width="stretch"):
+                # Clear browser cache
+                clear_localstorage()
+                
                 saved_lang = st.session_state.get('lang_toggle', 'IT')
-                st.session_state.clear() # Full clear is safer
+                st.session_state.clear() # Full clear
                 st.session_state['lang_toggle'] = saved_lang
                 
                 # Setup correct starting state (Home)
                 st.session_state.menu = "Home"
                 st.session_state.show_results = False
+                st.session_state.answers = {} # Explicitly empty
                 st.session_state.last_loaded_example = t['new']
+                st.session_state.data_uid = datetime.now().microsecond # Force widget refresh
                 st.session_state._scroll_to_top = True
                 
                 st.rerun()
@@ -1475,7 +1491,9 @@ def show_home(t: Dict, lang: str, menu_options: Dict) -> None:
         
         def go_assess():
             st.session_state.menu = "Assessment"
-            st.session_state.show_results = False # Ensure clean start
+            st.session_state.show_results = False 
+            st.session_state.answers = {} # Reset to empty for new assessment
+            st.session_state.data_uid = st.session_state.get('data_uid', 0) + 1 # Refresh widgets
             try:
                 assess_label = next(k for k, v in menu_options.items() if v == "Assessment")
                 st.session_state.nav_radio = assess_label
@@ -1484,7 +1502,7 @@ def show_home(t: Dict, lang: str, menu_options: Dict) -> None:
         
         def go_audit():
             st.session_state.menu = "Data Audit"
-            st.session_state.show_results = False # Ensure clean start
+            st.session_state.show_results = False
             try:
                 audit_label = next(k for k, v in menu_options.items() if v == "Data Audit")
                 st.session_state.nav_radio = audit_label
